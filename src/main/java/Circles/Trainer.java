@@ -1,3 +1,5 @@
+package Circles;
+
 public class Trainer {
     public static void main(String[] args) {
         Duck d = new Duck();
@@ -7,13 +9,15 @@ public class Trainer {
         System.out.println(a.speak());
         Duck d2 = (Duck) a; // downcasting
         train(new Duck());
-        // train(new Parrot());
-        Animal a2 = new Animal();
-        Bird b2 = new Bird();
+        train(new Parrot());
+//        Circles.Animal a2 = new Circles.Animal();
+//        Circles.Bird b2 = new Circles.Bird();
     }
 
     private static void train(Bird bird) {
-        Duck d = (Duck) bird;
-        d.swim();
+        if(bird instanceof Duck) {
+            Duck d = (Duck) bird;
+            d.swim();
+        }
     }
 }
